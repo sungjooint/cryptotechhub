@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>BOSTECH BLOCKCHAIN TechHub</title>
+  <meta name="description" content="가상자산 AML/CFT 국제 규제 동향, 글로벌 정책 인사이트, 컴플라이언스 전략을 제공하는 보스테크 블록체인 테크허브입니다. FATF 권고사항, 국제협약 분석, 정책 제언을 통해 디지털 금융 시대의 신뢰 기반 생태계 구축에 기여합니다.">
+  <meta name="keywords" content="가상자산 규제, AML, CFT, 자금세탁방지, 테러자금조달방지, FATF, 국제규제, 블록체인 정책, 디지털 금융, VASP, 가상자산사업자, 컴플라이언스, 금융정보분석원, KoFIU, 규제 인사이트, 정책 자문, 보스테크, 테크허브">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt=""> 
+        <h1 class="sitename">TECHHub</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">블록체인 <span>테크허브</span> 홈페이지에 오신 것을 환영합니다</h2>
+            <p class="animate__animated animate__fadeInUp">보스테크 블록체인 테크허브는 디지털자산 금융시대에 글로벌 환경과 규제를 조망하고, 업계 리더들과 정책 의사결정자에게 신뢰할 수 있는 인사이트를 제공합니다. 국제 관련 환경을  선제적으로 분석하여 대한민국 디지털 금융의 미래를 함께 설계합니다.</p>
+            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">규제 인텔리전스로 미래를 준비합니다</h2>
+            <p class="animate__animated animate__fadeInUp">FATF, UN, BIS 등 국제기구의 정책 방향을 심층 분석하고, 이를 국내 산업과 정책에 적용할 수 있는 전략적 시사점을 도출합니다. 복잡한 규제 환경 속에서 명확한 방향성을 제시하는 것이 우리의 역할입니다.</p>
+            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">신뢰 기반 디지털 금융 생태계를 선도합니다(*)</h2>
+            <p class="animate__animated animate__fadeInUp">기술 혁신과 제도적 신뢰는 함께 가야 합니다. 보스테크 테크허브는 글로벌 규제 동향 연구, 정책 제언, 그리고 산·학·관 협력을 통해 건전하고 지속가능한 가상자산 생태계 조성에 기여합니다.</p>
+            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Who we are</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              보스테크 블록체인 테크허브는 가상자산 규제를 포함한 환경과 정책에 관한 종합 인텔리전스 플랫폼입니다.</p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> <span>글로벌 규제 동향의 체계적 분석과 전략적 시사점 도출</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>정책결정자, 학계, 산업계를 위한 신뢰할 수 있는 정보 제공</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>국제 협력 네트워크를 통한 선진 사례 연구 및 공유</span></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>우리는 단순한 정보 전달을 넘어, 디지털 자산 시대의 정책 방향을 함께 고민하고 제안합니다. 국제기구, 정부기관, 학계와의 지속적인 교류를 통해 대한민국이 글로벌 디지털 금융 질서를 선도할 수 있도록 지식 기반을 구축합니다.</p>
+            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <ul class="nav nav-tabs row  d-flex" data-aos="fade-up" data-aos-delay="100">
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+              <i class="bi bi-binoculars"></i>
+              <h4 class="d-none d-lg-block">글로벌 규제 환경 분석</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+              <i class="bi bi-box-seam"></i>
+              <h4 class="d-none d-lg-block">정책 대응 전략 수립</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+              <i class="bi bi-brightness-high"></i>
+              <h4 class="d-none d-lg-block">글로벌 인사이트 공유</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
+              <i class="bi bi-command"></i>
+              <h4 class="d-none d-lg-block">지식 공유와 사회 기여</h4>
+            </a>
+          </li>
+        </ul><!-- End Tab Nav -->
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="tab-pane fade active show" id="features-tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>국제 기준의 변화를 읽고 미래를 준비합니다.</h3>
+                <p class="fst-italic">
+                  가상자산 규제는 전 세계적으로 빠르게 진화하고 있습니다. 테크허브는 금융 규제 권고사항의 트렌드, 주요국의 정책 대응, 그리고 국제협약의 이행 현황을 종합적으로 분석하여 의사결정자들이 선제적으로 대응할 수 있는 기반을 마련합니다.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>국제 자금세탁방지 기준의 진화와 정책적 함의</spab>
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> <span>주요국 규제 동향 비교 분석</span>.</li>
+                  <li><i class="bi bi-check2-all"></i> <span>국내 제도와의 정합성 검토 및 개선 방향 제시</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/working-1.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>규제 환경 변화에 대한 전략적 대응을 지원합니다.</h3>
+                <p>
+                  복잡한 국제 규제 환경 속에서 기업과 기관은 명확한 대응 전략이 필요합니다. 테크허브는 규제 변화가 산업과 정책에 미치는 영향을 분석하고, 실행 가능한 대응 방안을 제시하여 이해관계자들의 의사결정을 지원합니다.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>규제 리스크 평가 및 대응 프레임워크 제안</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>컴플라이언스 체계 고도화 방향 제언</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>국제 협력 및 공조 체계 구축 전략</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/working-4.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>세계 석학과 정책 리더의 관점을 전달합니다.</h3>
+                <p>
+                  BIS, IMF, 세계은행 등 국제기구와 글로벌 정책 리더들의 시각을 분석하여 디지털 금융의 미래 방향을 조망합니다. 화폐의 본질, 중앙은행의 역할, 그리고 새로운 금융 질서에 대한 깊이 있는 통찰을 제공합니다.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>디지털 화폐 시대의 통화 정책 방향</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>중앙은행 디지털화폐(CBDC)와 민간 혁신의 조화</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>글로벌 금융 안정성과 규제의 균형점 모색</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/working-3.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-4">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>디지털자산 시대를 맞아 함께 배우고 성장하는 건강한 생태계를 만듭니다.</h3>
+                <p>
+                  테크허브는 축적된 지식과 인사이트를 산업계, 학계, 정책 커뮤니티와 적극적으로 공유합니다. 세미나, 연구자료, 정책 제언을 통해 가상자산 산업의 건전한 발전과 사회적 신뢰 구축에 기여합니다.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>정책결정자 및 업계 리더 대상 세미나 개최 및 참여</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>연구보고서 및 인사이트 자료 발간 및 공유</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>산·학·관.군 협력 네트워크 구축 및 운영/협력</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/working-2.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-9 text-center text-xl-start">
+            <h3>Call To Action</h3>
+            <p>함께 디지털 금융의 미래를 설계하시겠습니까. 가상자산 규제와 정책에 관한 전략적 파트너십을 원하신다면 보스테크 블록체인 테크허브와 함께하세요. 글로벌 시각과 현지 전문성을 바탕으로 귀 기관의 의사결정을 지원합니다.</p>
+          </div>
+          <div class="col-xl-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#">협력 문의</a>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>What we do offer</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-cash-stack" style="color: #0dcaf0;"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>규제 동향 리서치</h3>
+              </a>
+              <p>국제기구와 주요국의 가상자산 규제 동향을 지속적으로 모니터링하고 분석합니다. 정책 변화의 배경과 방향성을 해석하여 전략적 시사점을 도출합니다.
+
+</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week" style="color: #fd7e14;"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>정책 자문 및 컨설팅</h3>
+              </a>
+              <p>정부기관, 공공기관, 기업을 대상으로 가상자산 관련 정책 수립과 제도 설계를 자문합니다. 국제 기준에 부합하는 실행 가능한 방안을 제시합니다.
+
+</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-text" style="color: #20c997;"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>인사이트 리포트 발간/공유</h3>
+              </a>
+              <p>글로벌 규제 환경, 정책 트렌드, 산업 동향에 관한 심층 분석 보고서를 정기적으로 발간합니다. 의사결정에 필요한 핵심 정보를 압축하여 전달합니다.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-credit-card-2-front" style="color: #df1529;"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>세미나 및 포럼 개최/참여</h3>
+              </a>
+              <p>정책결정자, 학계, 산업계 전문가들이 함께 모여 가상자산 규제와 정책 방향을 논의하는 장을 마련합니다. 다양한 관점의 교류를 통해 균형 잡힌 시각을 형성합니다.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-globe" style="color: #6610f2;"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>국제 협력 네트워크</h3>
+              </a>
+              <p>해외 규제기관, 연구기관, 국제기구와의 협력 채널을 구축하고 운영합니다. 글로벌 선진 사례와 정책 경험을 국내에 소개하고 적용 방안을 모색합니다.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-clock" style="color: #f3268c;"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>맞춤형 교육 프로그램</h3>
+              </a>
+              <p>임원, 정책담당자, 실무진을 대상으로 가상자산 규제와 글로벌 동향에 관한 맞춤형 교육을 제공합니다. 복잡한 이슈를 명확하게 이해할 수 있도록 설계합니다.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <p>Frequently Asked Questions</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-12">
+            <div class="custom-accordion" id="accordion-faq">
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-1">
+                    블록체인 테크허브는 어떤 분들을 위한 서비스인가요?
+                  </button>
+                </h2>
+
+                <div id="collapse-faq-1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    보스테크 블록체인 테크허브는 가상자산 정책에 관심 있는 정책결정자, 기업 경영진, 학계 연구자, 그리고 관련 분야 전문가들을 위한 서비스입니다. 복잡한 국제 규제 환경을 명확하게 이해하고 전략적 의사결정을 내리는 데 필요한 인사이트를 제공합니다.
+                  </div>
+                </div>
+              </div>
+              <!-- .accordion-item -->
+
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-2" "="">
+                어떤 종류의 정보와 자료를 제공하나요?
+              </button>
+            </h2>
+            <div id="collapse-faq-2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-faq">
+                    <div class="accordion-body">
+                      FATF, UN, BIS 등 국제기구의 정책 문서 분석, 주요국 규제 동향 비교, 글로벌 석학들의 정책 관점 해설, 그리고 국내 적용을 위한 전략적 시사점을 제공합니다. 정기 리포트, 세미나 자료, 심층 분석 보고서 등 다양한 형태로 전달됩니다.
+                    </div>
+              </div>
+            </div>
+            <!-- .accordion-item -->
+
+            <div class="accordion-item">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-3">
+                  협력이나 자문을 요청하려면 어떻게 해야 하나요?
+                </button>
+              </h2>
+
+              <div id="collapse-faq-3" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-faq">
+                <div class="accordion-body">
+                  하단의 연락처를 통해 문의해 주시면, 귀 기관의 필요와 상황에 맞는 협력 방안을 함께 논의하겠습니다. 정책 자문, 세미나 공동 개최, 연구 협력 등 다양한 형태의 파트너십이 가능합니다.
+
+
+                </div>
+              </div>
+            </div>
+            <!-- .accordion-item -->
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </section><!-- /Faq Section -->
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>TechHub Team</h2>
+        <p>보스테크 DS사업부 테크허브 핵심인원 소개</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-1.png" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>김 정현</h4>
+                <span>영업총괄/글로벌총괄</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-2.png" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>정 성헌</h4>
+                <span>개발총괄/보안총괄</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/admin_circle_small.png" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>관리자</h4>
+                <span>온라인 정보관리자</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+    <!-- Recent Posts Section -->
+    <section id="recent-posts" class="recent-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Recent Posts</h2>
+        <p>Recent Blog Posts<br></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">세미나</p>
+
+              <h2 class="title">
+                <a href="blog-details.html">디지털화폐 법제화와 우리의 준비 : 글로벌 프레임워크 분석응</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/team/team-2.png" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">김 정현</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Dec 5, 2025</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">인사이트</p>
+
+              <h2 class="title">
+                <a href="blog-details.html">미군의 예로 본 글로벌 AI 블록체인 인텔리전스 소개</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/team/team-1.png" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">정 성헌</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Nov 20, 2025</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">아티팩트</p>
+
+              <h2 class="title">
+                <a href="blog-details.html">체이널리시스 Reactor 공개용 제품소개서(공식)</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/team/admin_circle_small.png" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">블로그관리자</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Nov 10, 2025</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+        </div><!-- End recent posts list -->
+
+      </div>
+
+    </section><!-- /Recent Posts Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Contact Us</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>서울특별시 영등포구 당산로 41길 11 SK V1 센터 W동 1511~1512호</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>(대)02-3667-5803</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>jhkim@bostech.co.kr</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">보스테크 블록체인DS사업부</h3>
+      <p>보스테크 블록체인DS사업부에서 발행하는 디지털자산 비즈니스 환경 인사이트와 정책 리소스를 공유하는 테크허브입니다.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-skype"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">BOSTECH Blockchain DS Biz Div.</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by BOSTECH Blockchain DS Biz Div.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

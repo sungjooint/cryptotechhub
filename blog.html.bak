@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Blog - BOSTECH BLOCKCHAIN TechHub</title>
+  <meta name="description" content="가상자산 AML/CFT 국제 규제 동향, 글로벌 정책 인사이트, 컴플라이언스 전략을 제공하는 보스테크 블록체인 테크허브입니다. FATF 권고사항, 국제협약 분석, 정책 제언을 통해 디지털 금융 시대의 신뢰 기반 생태계 구축에 기여합니다.">
+  <meta name="keywords" content="가상자산 규제, AML, CFT, 자금세탁방지, 테러자금조달방지, FATF, 국제규제, 블록체인 정책, 디지털 금융, VASP, 가상자산사업자, 컴플라이언스, 금융정보분석원, KoFIU, 규제 인사이트, 정책 자문, 보스테크, 테크허브">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. 설정값 정의
+      const itemsPerPage = 3; // 페이지당 보여줄 게시글 수 (원하는 숫자로 변경 가능)
+      const blogPostsContainer = document.querySelector('#blog-posts .row');
+      const allPosts = Array.from(blogPostsContainer.querySelectorAll('.col-lg-4')); // 게시글 아이템들
+      const paginationContainer = document.querySelector('#blog-pagination ul');
+      let currentPage = 1;
+      const totalPages = Math.ceil(allPosts.length / itemsPerPage);
+
+      // 2. 게시글 표시 함수
+      function showPage(page) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+
+        allPosts.forEach((post, index) => {
+          if (index >= start && index < end) {
+            post.style.display = 'block'; // 현재 페이지 게시글 보이기
+          } else {
+            post.style.display = 'none';  // 나머지 숨기기
+          }
+        });
+      }
+
+      // 3. 페이지네이션 버튼 생성 및 렌더링 함수
+      function renderPagination() {
+        paginationContainer.innerHTML = ''; // 기존 버튼 초기화
+
+        // [이전] 버튼 생성
+        const prevLi = document.createElement('li');
+        const prevLink = document.createElement('a');
+        prevLink.href = '#';
+        prevLink.innerHTML = '<i class="bi bi-chevron-left"></i>';
+        if (currentPage === 1) {
+          prevLink.style.pointerEvents = 'none'; // 첫 페이지면 클릭 방지
+          prevLink.style.opacity = '0.5';
+        }
+        prevLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (currentPage > 1) {
+            currentPage--;
+            updateUI();
+          }
+        });
+        prevLi.appendChild(prevLink);
+        paginationContainer.appendChild(prevLi);
+
+        // [페이지 번호] 버튼 생성
+        for (let i = 1; i <= totalPages; i++) {
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = '#';
+          link.innerText = i;
+          
+          if (i === currentPage) {
+            link.classList.add('active'); // 현재 페이지 활성화 스타일
+          }
+
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentPage = i;
+            updateUI();
+          });
+
+          li.appendChild(link);
+          paginationContainer.appendChild(li);
+        }
+
+        // [다음] 버튼 생성
+        const nextLi = document.createElement('li');
+        const nextLink = document.createElement('a');
+        nextLink.href = '#';
+        nextLink.innerHTML = '<i class="bi bi-chevron-right"></i>';
+        if (currentPage === totalPages) {
+          nextLink.style.pointerEvents = 'none'; // 마지막 페이지면 클릭 방지
+          nextLink.style.opacity = '0.5';
+        }
+        nextLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (currentPage < totalPages) {
+            currentPage++;
+            updateUI();
+          }
+        });
+        nextLi.appendChild(nextLink);
+        paginationContainer.appendChild(nextLi);
+      }
+
+      // 4. UI 업데이트 및 초기화
+      function updateUI() {
+        showPage(currentPage);
+        renderPagination();
+        // 페이지 이동 시 부드럽게 상단으로 스크롤 이동 (선택사항)
+        document.querySelector('#blog-posts').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // 초기 실행
+      if (allPosts.length > 0) {
+        updateUI();
+      }
+    });
+  </script>
+
+<body class="blog-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">TECHHub</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>BLOCKCHAIN TechHub BLOG</h1>
+        <p>보스테크 테크허브는 블록체인DS사업부에서 발행하는 디지털자산 비즈니스 환경 인사이트와 정책 리소스를 공유하는 테크 블로그입니다.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Blog</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">세미나</p>
+
+              <h2 class="title">
+                <a href="blog-details.html">세미나주제-AML/CFT 관련 규정에 대한 대응</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/blog/team-2.png" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">김 정현</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Dec 5, 2025</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">인사이트</p>
+
+              <h2 class="title">
+                <a href="blog-details.html">미군의 예로 본 글로벌 AI 블록체인 인텔리전스 소개</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/blog/team-1.png" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">정 성헌</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Nov 20, 2025</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">아티팩트</p>
+
+              <h2 class="title">
+                <a href="blog-details.html">체이널리시스 Reactor 공개용 제품소개서(공식)</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/blog/admin.png" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">블로그관리자</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Nov 10, 2025</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">세미나</p>
+
+              <h2 class="title">
+                <a href="blog-details.html">세미나주제-AML/CFT 관련 규정에 대한 대응</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/blog/team-2.png" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">김 정현</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Dec 5, 2025</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">인사이트</p>
+
+              <h2 class="title">
+                <a href="blog-details.html">미군의 예로 본 글로벌 AI 블록체인 인텔리전스 소개</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/blog/team-1.png" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">정 성헌</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Nov 20, 2025</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">아티팩트</p>
+
+              <h2 class="title">
+                <a href="blog-details.html">체이널리시스 Reactor 공개용 제품소개서(공식)</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/blog/admin.png" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">블로그관리자</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Nov 10, 2025</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+        </div>
+      </div>
+
+    </section><!-- /Blog Posts Section -->
+
+    <!-- Blog Pagination Section -->
+    <section id="blog-pagination" class="blog-pagination section">
+
+      <div class="container">
+        <div class="d-flex justify-content-center">
+          <ul>
+            <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
+            <li><a href="#" class="active">1</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+               
+    </section>
+    <!--  
+    <section id="blog-pagination" class="blog-pagination section">
+
+      <div class="container">
+        <div class="d-flex justify-content-center">
+          <ul>
+            <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#" class="active">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li>...</li>
+            <li><a href="#">10</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+               
+    </section>
+	-->
+	<!-- /Blog Pagination Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">보스테크 블록체인DS사업부</h3>
+      <p>보스테크 블록체인DS사업부에서 발행하는 가상자산 규제 인사이트와 정책 리소스를 공유하는 테크허브입니다.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-skype"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">BOSTECH Blockchain DS Biz Div.</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by BOSTECH Blockchain DS Biz Div.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
