@@ -195,7 +195,7 @@
                 </p>
                 <ul>
                   <li><i class="bi bi-check2-all"></i>
-                    <spab>국제 자금세탁방지 기준의 진화와 정책적 함의</spab>
+                    <span>국제 자금세탁방지 기준의 진화와 정책적 함의</span>
                   </li>
                   <li><i class="bi bi-check2-all"></i> <span>주요국 규제 동향 비교 분석</span>.</li>
                   <li><i class="bi bi-check2-all"></i> <span>국내 제도와의 정합성 검토 및 개선 방향 제시</span></li>
@@ -413,7 +413,7 @@
 
               <div class="accordion-item">
                 <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-2" "="">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-2">
                 어떤 종류의 정보와 자료를 제공하나요?
               </button>
             </h2>
@@ -618,15 +618,12 @@
     </section><!-- /Recent Posts Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+<section id="contact" class="contact section">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
         <p>Contact Us</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade" data-aos-delay="100">
+      </div><div class="container" data-aos="fade" data-aos-delay="100">
 
         <div class="row gy-4">
 
@@ -638,63 +635,60 @@
                 <p>(주)보스테크 블록체인DS 사업부</p>
                 <p>서울특별시 영등포구 당산로 41길 11 SK V1 센터 W동 1511~1512호(우)07217</p>    
               </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Call Us</h3>
                 <p>(대)02-3667-5803</p>
               </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
                 <p>jhkim@bostech.co.kr</p>
               </div>
-            </div><!-- End Info Item -->
-
-          </div>
+            </div></div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <iframe name="myFrame" width="0" height="0" style="display:none;"></iframe>
+
+            <form id="postForm" action="https://script.google.com/macros/s/AKfycbxM0HtA6t91ksFzT1bT9M0YcyuRYHJShrwo0XBwFTGWrrlA44ssncCMz8J5k_U4dCPdlQ/exec" method="post" target="myFrame" class="google-email-form" data-aos="fade-up" data-aos-delay="200">
+              
+              <input type="hidden" name="LocDateTime" id="idLocDateTime">
+              <input type="hidden" name="LocSite" id="Page" value="TechHub">
+              <input type="hidden" name="subject" id="subject" value="inquiry<crypto-techhub.kr>"> 
+              
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="명칭 Name" required="">
+                  <input type="text" name="dname" id="name" class="form-control" placeholder="명칭 Name" required="">
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="text" class="form-control" name="contact" placeholder="연락처 Contacts" required="">
+                   <input type="text" class="form-control" name="demail" id="email" placeholder="연락처 (contact 연락처 혹은 이메일)" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="주제 Subject" required="">
+                  <input type="text" class="form-control" name="topic" id="topic" placeholder="주제 Subject" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="내용 Message" required=""></textarea>
+                   <textarea class="form-control" name="dmessage" id="message" rows="6" placeholder="내용 Message" required=""></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">메시지가 전송 되었습니다. Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
+                  <button type="submit" id="submit-btn" style="background: var(--accent-color); border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 4px;">Send Message</button>
                 </div>
 
               </div>
             </form>
-          </div><!-- End Contact Form -->
-
-        </div>
+          </div></div>
 
       </div>
 
-    </section><!-- /Contact Section -->
+    </section>
+   <!-- End of Contact Section -->
+
 
   </main>
 
@@ -719,10 +713,10 @@
           <!-- You can delete the links only if you've purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Contents Created by BOSTECH Blockchain DS Biz Div.</br>       
-          Designed by SJ INT Co.,Ltd.</br>
-          본 사이트는 온라인 이용 고객을 위한 개인정보처리방침을 준수합니다.</br>
-          (주)성주아이앤티ㅣ사업자등록번호594-81-01823 개인정보관리자 정성헌
+		  Contents Created by BOSTECH Blockchain DS Biz Div.<br>       
+		  Designed by SJ INT Co.,Ltd.<br>
+		  본 사이트는 온라인 이용 고객을 위한 개인정보처리방침을 준수합니다.<br>
+		  (주)성주아이앤티|사업자등록번호594-81-01823 개인정보관리자 정성헌
         </div>
       </div>
     </div>
@@ -736,7 +730,7 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!--   <script src="assets/vendor/php-email-form/validate.js"></script> 이메일 php 구현 삭제!!-->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
@@ -745,6 +739,87 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+<script>
+    // 1. 페이지 로드 시 현재 시간 설정 로직 (참조 코드와 동일)
+    const now = new Date();
+    const timeString = now.toLocaleString();
+    const timeInput = document.getElementById("idLocDateTime");
+    if(timeInput) timeInput.value = timeString;
+
+    // 2. 폼 제출 이벤트 리스너
+    const form = document.getElementById("postForm");
+    
+    if (form) {
+      form.addEventListener("submit", function(event) {
+        event.preventDefault(); // 기본 제출 동작 방지
+        
+        const submitBtn = document.getElementById("submit-btn");
+        const originalBtnText = submitBtn.innerText;
+        
+        // 공란 체크 로직 (참조 코드와 동일)
+        const inputs = form.querySelectorAll("input[type=text], input[type=email], textarea");
+        let isBlankField = false;
+        inputs.forEach(input => {
+            if (input.value.trim() === "") {
+                isBlankField = true;
+            }
+        });
+
+        if (isBlankField) {
+            alert("모든 필드를 입력해주세요. Please fill in all fields.");
+            return;
+        }
+
+        // [중요] Subject 필드를 dmessage에 포함시키기 (구글 스크립트가 dmessage만 읽을 경우를 대비)
+        const subjectField = document.getElementById("subject");
+        const messageField = document.getElementById("message");
+        const originalMessage = messageField.value;
+        
+        // 전송용 FormData 객체 생성
+        const formData = new FormData(form);
+        
+        // 메시지 본문 맨 앞에 제목을 합쳐서 전송 (데이터 유실 방지)
+        if(subjectField && subjectField.value) {
+            const combinedMessage = `[제목: ${subjectField.value}]\n\n${originalMessage}`;
+            formData.set("dmessage", combinedMessage); 
+        }
+
+        // 전송 시작 (버튼 텍스트 변경)
+        submitBtn.innerText = "Sending...";
+        submitBtn.disabled = true;
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", form.action);
+        
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // 성공 메시지 (참조 코드와 동일한 멘트 + 추가)
+                alert("제출이 정상적으로 처리되었습니다. 감사합니다. Your message has been sent.");
+                form.reset(); // 폼 초기화
+                
+                // 시간 재설정
+                const newNow = new Date();
+                timeInput.value = newNow.toLocaleString();
+            } else {
+                // 실패 메시지
+                alert("제출 처리 중 오류가 발생했습니다. 네트워크를 확인해보시거나 이메일로 연락주시면 직접 처리 가능합니다.");
+            }
+            // 버튼 복구
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+        };
+        
+        xhr.onerror = function() {
+            alert("네트워크 오류가 발생했습니다.");
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+        };
+
+        xhr.send(formData);
+      });
+    }
+  </script>
 
 </body>
 
