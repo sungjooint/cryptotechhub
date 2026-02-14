@@ -2,30 +2,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     const preloader = document.querySelector('#preloader');
 
     try {
-        // 1. 헤더/푸터 가져오기
-        // (Promise.all을 사용해 병렬로 빠르게 가져옵니다)
-        const [headerResponse, footerResponse] = await Promise.all([
-            fetch('header.html'),
-            fetch('footer.html')
-        ]);
+        // 1. [수정] 푸터만 가져오기 (헤더 fetch 제거)
+        const footerResponse = await fetch('footer.html');
 
-        if (!headerResponse.ok || !footerResponse.ok) throw new Error('기본 레이아웃 로딩 실패');
+        if (!footerResponse.ok) throw new Error('푸터 로딩 실패');
 
-        // 2. 헤더/푸터 HTML 심기
-        document.getElementById('header-placeholder').innerHTML = await headerResponse.text();
+        // 2. [수정] 푸터 HTML 심기 (헤더 심기 제거)
         document.getElementById('footer-placeholder').innerHTML = await footerResponse.text();
-        console.log("헤더/푸터 로딩 완료");
+        console.log("푸터 로딩 완료");
 
-
-
-
-// ---------------------------------------------------------
-        // [디버깅 강화] 저자 소개(Author Widget) 동적 로딩
+        // ---------------------------------------------------------
+        // [유지] 저자 소개(Author Widget) 동적 로딩
         // ---------------------------------------------------------
         const authorPlaceholder = document.getElementById('author-placeholder');
         
         if (authorPlaceholder) {
-            console.log("✅ 태그 찾음! 파일 로딩 시도 중..."); // 이 로그가 뜨나요?
+            console.log("✅ 태그 찾음! 저자 파일 로딩 시도 중...");
             
             const authorFile = authorPlaceholder.getAttribute('data-include');
             if (authorFile) {
@@ -35,30 +27,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                         authorPlaceholder.innerHTML = await authorResp.text();
                         console.log(`🎉 성공: ${authorFile} 로딩 완료`);
                     } else {
-                        console.error(`❌ 실패: ${authorFile} 파일을 찾을 수 없습니다 (404). 파일명/위치 확인!`);
+                        console.error(`❌ 실패: ${authorFile} 파일을 찾을 수 없습니다.`);
                     }
                 } catch (e) {
                     console.error("❌ 에러: 저자 정보 로딩 중 오류 발생", e);
                 }
-            } else {
-                console.warn("⚠️ 경고: data-include 속성이 비어있습니다.");
             }
-        } else {
-            // 콘솔에 이 메시지가 뜬다면 1번(HTML 태그 누락/오타)이 원인입니다.
-            console.log("ℹ️ 알림: 이 페이지에는 'author-placeholder' 태그가 없습니다.");
         }
         // ---------------------------------------------------------
 
-
-
-
-
-
-
-
-        // ---------------------------------------------------------
-
         // 3. 메뉴 Active 처리
+        // (헤더가 이미 HTML에 존재하므로 바로 실행됩니다)
         const currentPath = window.location.pathname.split("/").pop() || 'index.html';
         document.querySelectorAll('#navmenu a').forEach(link => {
             const href = link.getAttribute('href');
@@ -70,8 +49,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         // 4. 모바일 메뉴 버튼 충돌 방지 및 이벤트 연결
+        // (헤더가 HTML에 직접 있어도, main.js와의 충돌 방지를 위해 이 코드는 유지하는 것이 좋습니다)
         const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
         if (mobileNavToggleBtn) {
+            // 기존 버튼을 복제하여 기존 이벤트 연결을 끊고 새로 연결
             const newBtn = mobileNavToggleBtn.cloneNode(true);
             mobileNavToggleBtn.parentNode.replaceChild(newBtn, mobileNavToggleBtn);
 
@@ -100,7 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
 
-        // 6. main.js 로드 (애니메이션 등)
+        // 6. main.js 로드 (푸터 및 저자 소개가 로드된 후 실행되어야 안전함)
         const oldScript = document.querySelector('script[src="assets/js/main.js"]');
         if (oldScript) oldScript.remove();
         
