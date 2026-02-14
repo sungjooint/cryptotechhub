@@ -26,27 +26,33 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
 
-        // 4. [핵심] 모바일 메뉴 버튼 기능 강제 주입
-        // 헤더가 로딩된 직후에 버튼을 찾아서 클릭 이벤트를 직접 붙입니다.
+        // 4. [핵심 수정] 모바일 메뉴 버튼 충돌 방지
         const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
         
         if (mobileNavToggleBtn) {
-            console.log("모바일 버튼 찾음: 기능 연결 중...");
-            // 기존 이벤트 제거 (혹시 모를 중복 방지)
+            console.log("모바일 버튼 기능 연결 중...");
+            
+            // 기존 버튼을 복제하여 기존 이벤트 연결(main.js 등)을 끊어버림
             const newBtn = mobileNavToggleBtn.cloneNode(true);
             mobileNavToggleBtn.parentNode.replaceChild(newBtn, mobileNavToggleBtn);
 
+            // 새 버튼에 강력한 이벤트 리스너 부착
             newBtn.addEventListener('click', function(e) {
-                console.log("모바일 버튼 클릭됨!");
+                // [중요] 다른 스크립트(main.js)가 이 클릭을 감지하지 못하게 막음
+                e.preventDefault();
+                e.stopPropagation(); 
+                e.stopImmediatePropagation(); 
+
+                console.log("모바일 버튼 클릭됨! (충돌 방지 적용)");
+                
+                // 메뉴 토글 실행
                 document.body.classList.toggle('mobile-nav-active');
                 this.classList.toggle('bi-list');
                 this.classList.toggle('bi-x');
             });
-        } else {
-            console.error("모바일 버튼을 찾을 수 없습니다. (클래스명 .mobile-nav-toggle 확인 필요)");
         }
 
-        // 5. 모바일 메뉴 내의 링크 클릭 시 메뉴 닫기 기능 (UX 향상)
+        // 5. 모바일 메뉴 링크 클릭 시 닫기
         document.querySelectorAll('#navmenu a').forEach(navLink => {
             navLink.addEventListener('click', () => {
                 if (document.body.classList.contains('mobile-nav-active')) {
@@ -60,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
 
-        // 6. main.js 로드 및 애니메이션 초기화
+        // 6. main.js 로드 (애니메이션 등 다른 기능용)
         const oldScript = document.querySelector('script[src="assets/js/main.js"]');
         if (oldScript) oldScript.remove();
         
@@ -76,7 +82,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
         document.body.appendChild(script);
 
-        // 7. 로딩 화면 제거 및 앵커 이동
+        // 7. 로딩 화면 제거
         setTimeout(() => {
             if (preloader) preloader.remove();
             
