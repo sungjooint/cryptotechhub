@@ -1,24 +1,44 @@
+제공해주신 include.js와 HTML 파일들을 꼼꼼히 검토했습니다.
+
+결론부터 말씀드리면, 95% 완성되었습니다!
+하지만 **"블록체인 상세 페이지에서 상단 메뉴(Blog)에 불이 들어오지 않는 문제"**가 이 코드에는 빠져 있습니다. (아까 추가했던 로직이 누락되었습니다.)
+
+또한, HTML 파일들(blog.html, business.html 등)에 **푸터 자리(footer-placeholder)**가 제대로 준비되어 있는지 확인이 필요합니다.
+
+완벽한 마무리를 위해 딱 두 가지만 수정하면 됩니다.
+
+1. include.js에 "블로그 메뉴 활성화" 로직 다시 넣기
+현재 코드대로라면 blog-details-1.html에 들어갔을 때, 메뉴가 blog.html과 이름이 다르기 때문에 Blog 메뉴에 불이 꺼집니다.
+
+아래 코드가 최종 완성본입니다. (3번 Active 처리 부분에 로직을 다시 채워 넣었습니다.)
+
+📂 assets/js/include.js (이걸로 덮어쓰세요!)
+
+JavaScript
 document.addEventListener('DOMContentLoaded', async () => {
     const preloader = document.querySelector('#preloader');
 
     try {
-        // 1. [수정] 푸터만 가져오기 (헤더 fetch 제거)
+        // 1. 푸터 가져오기 (헤더는 HTML에 있으므로 패스)
         const footerResponse = await fetch('footer.html');
-
         if (!footerResponse.ok) throw new Error('푸터 로딩 실패');
 
-        // 2. [수정] 푸터 HTML 심기 (헤더 심기 제거)
-        document.getElementById('footer-placeholder').innerHTML = await footerResponse.text();
-        console.log("푸터 로딩 완료");
+        // 2. 푸터 HTML 심기
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        if (footerPlaceholder) {
+            footerPlaceholder.innerHTML = await footerResponse.text();
+            console.log("푸터 로딩 완료");
+        } else {
+            console.error("❌ 에러: HTML에 'footer-placeholder' 태그가 없습니다!");
+        }
 
         // ---------------------------------------------------------
-        // [유지] 저자 소개(Author Widget) 동적 로딩
+        // 저자 소개(Author Widget) 동적 로딩
         // ---------------------------------------------------------
         const authorPlaceholder = document.getElementById('author-placeholder');
         
         if (authorPlaceholder) {
             console.log("✅ 태그 찾음! 저자 파일 로딩 시도 중...");
-            
             const authorFile = authorPlaceholder.getAttribute('data-include');
             if (authorFile) {
                 try {
@@ -34,14 +54,31 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             }
         }
-        // ---------------------------------------------------------
 
-        // 3. 메뉴 Active 처리
-        // (헤더가 이미 HTML에 존재하므로 바로 실행됩니다)
+        // ---------------------------------------------------------
+        // 3. [중요 수정] 메뉴 Active 처리 (블로그 상세페이지 대응 포함)
+        // ---------------------------------------------------------
         const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+        
         document.querySelectorAll('#navmenu a').forEach(link => {
             const href = link.getAttribute('href');
-            if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+            let isActive = false;
+
+            // 조건 1: 파일명이 정확히 일치할 때 (예: business.html)
+            if (href === currentPath) {
+                isActive = true;
+            } 
+            // 조건 2: 메인 페이지 처리 (루트 경로 / 인 경우)
+            else if (currentPath === '' && href === 'index.html') {
+                isActive = true;
+            }
+            // 조건 3: [복구됨] 블로그 상세 페이지일 때 'Blog' 메뉴 활성화
+            else if (currentPath.includes('blog-details') && href === 'blog.html') {
+                isActive = true;
+            }
+
+            // 최종 적용
+            if (isActive) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');
@@ -49,10 +86,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         // 4. 모바일 메뉴 버튼 충돌 방지 및 이벤트 연결
-        // (헤더가 HTML에 직접 있어도, main.js와의 충돌 방지를 위해 이 코드는 유지하는 것이 좋습니다)
         const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
         if (mobileNavToggleBtn) {
-            // 기존 버튼을 복제하여 기존 이벤트 연결을 끊고 새로 연결
             const newBtn = mobileNavToggleBtn.cloneNode(true);
             mobileNavToggleBtn.parentNode.replaceChild(newBtn, mobileNavToggleBtn);
 
@@ -81,7 +116,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
 
-        // 6. main.js 로드 (푸터 및 저자 소개가 로드된 후 실행되어야 안전함)
+        // 6. main.js 로드
         const oldScript = document.querySelector('script[src="assets/js/main.js"]');
         if (oldScript) oldScript.remove();
         
