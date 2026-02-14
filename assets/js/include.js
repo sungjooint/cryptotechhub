@@ -3,17 +3,41 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // 1. 헤더/푸터 가져오기
+        // (Promise.all을 사용해 병렬로 빠르게 가져옵니다)
         const [headerResponse, footerResponse] = await Promise.all([
             fetch('header.html'),
             fetch('footer.html')
         ]);
 
-        if (!headerResponse.ok || !footerResponse.ok) throw new Error('파일 로딩 실패');
+        if (!headerResponse.ok || !footerResponse.ok) throw new Error('기본 레이아웃 로딩 실패');
 
-        // 2. HTML 심기
+        // 2. 헤더/푸터 HTML 심기
         document.getElementById('header-placeholder').innerHTML = await headerResponse.text();
         document.getElementById('footer-placeholder').innerHTML = await footerResponse.text();
         console.log("헤더/푸터 로딩 완료");
+
+        // ---------------------------------------------------------
+        // [추가된 기능] 저자 소개(Author Widget) 동적 로딩
+        // ---------------------------------------------------------
+        const authorPlaceholder = document.getElementById('author-placeholder');
+        if (authorPlaceholder) {
+            // 태그에 적힌 파일명(data-include)을 읽어옴
+            const authorFile = authorPlaceholder.getAttribute('data-include');
+            if (authorFile) {
+                try {
+                    const authorResp = await fetch(authorFile);
+                    if (authorResp.ok) {
+                        authorPlaceholder.innerHTML = await authorResp.text();
+                        console.log(`저자 정보(${authorFile}) 로딩 완료`);
+                    } else {
+                        console.error(`저자 파일(${authorFile})을 찾을 수 없습니다.`);
+                    }
+                } catch (e) {
+                    console.error("저자 정보 로딩 중 에러:", e);
+                }
+            }
+        }
+        // ---------------------------------------------------------
 
         // 3. 메뉴 Active 처리
         const currentPath = window.location.pathname.split("/").pop() || 'index.html';
@@ -26,26 +50,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
 
-        // 4. [핵심 수정] 모바일 메뉴 버튼 충돌 방지
+        // 4. 모바일 메뉴 버튼 충돌 방지 및 이벤트 연결
         const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-        
         if (mobileNavToggleBtn) {
-            console.log("모바일 버튼 기능 연결 중...");
-            
-            // 기존 버튼을 복제하여 기존 이벤트 연결(main.js 등)을 끊어버림
             const newBtn = mobileNavToggleBtn.cloneNode(true);
             mobileNavToggleBtn.parentNode.replaceChild(newBtn, mobileNavToggleBtn);
 
-            // 새 버튼에 강력한 이벤트 리스너 부착
             newBtn.addEventListener('click', function(e) {
-                // [중요] 다른 스크립트(main.js)가 이 클릭을 감지하지 못하게 막음
                 e.preventDefault();
-                e.stopPropagation(); 
+                e.stopPropagation();
                 e.stopImmediatePropagation(); 
 
-                console.log("모바일 버튼 클릭됨! (충돌 방지 적용)");
-                
-                // 메뉴 토글 실행
                 document.body.classList.toggle('mobile-nav-active');
                 this.classList.toggle('bi-list');
                 this.classList.toggle('bi-x');
@@ -66,7 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
 
-        // 6. main.js 로드 (애니메이션 등 다른 기능용)
+        // 6. main.js 로드 (애니메이션 등)
         const oldScript = document.querySelector('script[src="assets/js/main.js"]');
         if (oldScript) oldScript.remove();
         
@@ -82,7 +97,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
         document.body.appendChild(script);
 
-        // 7. 로딩 화면 제거
+        // 7. 로딩 화면 제거 및 앵커 이동
         setTimeout(() => {
             if (preloader) preloader.remove();
             
